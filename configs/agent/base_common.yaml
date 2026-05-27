@@ -1,0 +1,18 @@
+# Shared defaults for algorithms (critic + replay buffer).
+
+# critic
+# we can set critic_lr: 0 to disable single sample update
+critic_lr: 0
+critic_replay_lr: 0.05
+critic_hidden_size: 64
+critic_hidden_layers: 2
+n_critic_updates: -1
+
+# replay buffer
+batch_size: 512
+max_replay_steps: 100
+err_tolerance_tau: 0.001
+replay_start_step: 1
+
+# actor log-prob aggregation across action dims
+log_prob_reduction: sum

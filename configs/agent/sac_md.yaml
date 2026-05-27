@@ -1,0 +1,8 @@
+defaults:
+  - sac
+  - _self_
+
+name: sac_md
+kl_penalty_coef: 0.01
+mirror_descent_period: 10
+

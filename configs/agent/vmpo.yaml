@@ -1,0 +1,16 @@
+defaults:
+  - base_common
+  - _self_
+
+name: vmpo
+
+# actor
+actor_lr: 0.05
+actor_lr_multiplier: 1
+n_actor_updates: 1
+n_action_proposals: 30
+n_action_proposals_selected: 3
+
+# value baseline updater is no-op in VMPOAgent, but key is still read in some shared code paths
+value_baseline_lr: 0.1
+

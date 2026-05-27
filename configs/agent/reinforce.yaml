@@ -1,0 +1,18 @@
+defaults:
+  - base_common
+  - _self_
+
+name: reinforce
+
+# critic
+critic_replay_lr: 0.01
+
+# actor
+actor_lr: 0.01
+actor_lr_multiplier: 1
+n_actor_updates: 1
+value_baseline_lr: 0.1
+
+# not used by ReinforceAgent, but kept for parity with older configs/logging
+entropy_coef: 0.01
+

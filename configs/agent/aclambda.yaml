@@ -1,0 +1,14 @@
+defaults:
+  - base_common
+  - _self_
+
+name: aclambda
+critic_replay_lr: 0.01
+
+# actor
+actor_lr: 0.01
+actor_lr_multiplier: 1
+n_actor_updates: 1
+lamda: 1
+value_baseline_lr: 0.1
+

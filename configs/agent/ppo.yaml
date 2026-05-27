@@ -1,0 +1,22 @@
+defaults:
+  - base_common
+  - _self_
+
+name: ppo
+
+# actor
+actor_lr: 0.05
+actor_lr_multiplier: 1
+n_action_proposals: 30
+n_action_proposals_selected: 3
+value_baseline_lr: 0.1
+
+# ppo params
+v_coef: 1.0
+entropy_coef: 0.01
+clip_coef: 0.2
+
+# ppo onpolicy fixed params
+n_actor_updates: 10
+onpolicy_samples: 10
+

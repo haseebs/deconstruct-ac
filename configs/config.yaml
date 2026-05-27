@@ -1,0 +1,47 @@
+# we can replace the joblib launcher below with Submitit for easier sweeping
+# on compute canada: https://hydra.cc/docs/plugins/submitit_launcher/
+defaults:
+  - db: credentials-local
+  - schema: default-schema
+  - agent: sac
+  - policy: softmax
+  - agent/sweeper_params@hydra.sweeper.params: sac_sweeper_01
+  - override hydra/launcher: joblib
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+  - _self_
+
+# NOTE: "args.run" is a mandatory <int> argument. This is the primary key used as an
+# individual experiment's identifier in the database. In the case of a sweep,
+# we only need to provide args.run for the first experiment in the sweep.
+#
+# "???" means that it has to be provided as a command line argument
+args:
+  run: ???
+  db_prefix: lingwei
+  db_name: sac_softmax_fix
+  seed: 0
+  steps: 2000
+  n_actions: 3
+  action_min: 0
+  action_max: 20
+  n_threads: 1
+  cuda: False
+  noise: 0.01
+
+# The following  overrides all the hyper-parameters defined above and in nested cfgs
+# hydra:
+#   mode: MULTIRUN
+#   launcher:
+#     n_jobs: 10
+#   sweeper:
+#      params:
+#        args.seed: range(0,10)
+#        agent: greedyac
+#        policy: beta, gaussian, softmax
+hydra:
+  output_subdir: null
+
+
+# 1) we could easily replace the grid-search sweeper above with
+# Optuna/Ax/Nevergrad https://hydra.cc/docs/plugins/optuna_sweeper/

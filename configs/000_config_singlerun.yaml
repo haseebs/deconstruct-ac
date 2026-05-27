@@ -1,0 +1,27 @@
+# we can replace the joblib launcher below with Submitit for easier sweeping
+# on compute canada: https://hydra.cc/docs/plugins/submitit_launcher/
+defaults:
+  - db: credentials-rlaidb
+  - schema: default-schema
+  - agent: sac
+  - policy: gaussian_squashed
+  - override hydra/launcher: joblib
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+  - _self_
+
+args:
+  run: 42
+  db_prefix: hshah1
+  db_name: 405_acl_debug112111tes3111
+  seed: 0
+  steps: 5000
+  n_actions: 3
+  action_min: 0
+  action_max: 20
+  n_threads: 1
+  cuda: False
+  noise: 0.01
+
+hydra:
+  output_subdir: null

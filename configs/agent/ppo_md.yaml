@@ -1,0 +1,8 @@
+defaults:
+  - ppo
+  - _self_
+
+name: ppo_md
+kl_penalty_coef: 1.0
+mirror_descent_period: 5
+

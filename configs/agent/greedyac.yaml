@@ -1,0 +1,19 @@
+defaults:
+  - base_common
+  - _self_
+
+name: greedyac
+
+# actor
+actor_lr: 0.05
+actor_lr_multiplier: 1
+n_actor_updates: 1
+n_action_proposals: 30
+n_action_proposals_selected: 3
+
+# greedyac knobs
+kl_penalty_coef: 0
+mirror_descent_period: 0
+use_eta: 0
+use_true_reward: False
+

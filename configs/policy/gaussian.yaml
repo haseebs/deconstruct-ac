@@ -1,0 +1,5 @@
+# @package policy
+actor_policy: gaussian
+actor_policy_mean_init: 0
+actor_policy_shape_init: 1
+reparameterisation_trick: 1

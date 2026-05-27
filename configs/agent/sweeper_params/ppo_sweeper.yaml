@@ -1,0 +1,4 @@
+# critic
+agent.critic_replay_lr: 0.09, 0.03, 0.01, 0.0033, 0.0011, 0.00037, 0.00012
+agent.entropy_coef: 0.001
+agent.n_actor_updates: 30

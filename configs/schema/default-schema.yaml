@@ -1,0 +1,59 @@
+# store the current action whenever a new action is taken, and the update statistics
+errors:
+  columns:
+    run: 0
+    step: 0
+    action_p: 0.0
+    action_i: 0.0
+    action_d: 0.0
+    error: 0.0
+    reward: 0.0
+    reward_moving_avg: 0.0
+  primary_keys: [run,step]
+
+# track the batch GD statistics
+replay_errors:
+  columns:
+    run: 0
+    step: 0
+    n_replay_steps: 0
+    error_first_batch: 0.0
+    error_last_batch: 0.0
+  primary_keys: [run,step]
+
+policy:
+  columns:
+    run: 0
+    step: 0
+    policy_means: []
+    policy_stds: []
+    dof: []
+  primary_keys: [run,step]
+
+
+# periodically store the learned action values for all possible actions (also optional)
+action_values:
+  columns:
+    run: 0
+    step: 0
+    action_p: 0.0
+    action_i: 0.0
+    action_d: 0.0
+    value: 0.0
+  primary_keys: [run,step,action_p,action_i,action_d]
+
+# store the final statistics after the agent is done running
+summary:
+  columns:
+    run: 0
+    step: 0
+    action_p: 0.0
+    action_i: 0.0
+    action_d: 0.0
+    reward: 0.0
+    reward_auc: 0.0
+    reward_auc_10perc: 0.0
+    reward_auc_50perc: 0.0
+    run_status: "na"
+    time_taken: 0.0
+  primary_keys: [run]

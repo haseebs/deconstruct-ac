@@ -1,0 +1,7 @@
+# critic
+agent.critic_replay_lr: 0.09, 0.03, 0.01, 0.0033, 0.0011, 0.00037, 0.00012
+  # policy.actor_policy_shape_init: 0.1, 0.5, 1
+policy.actor_policy_shape_init: 0.0, 0.4, 0.7, 1.1
+  # agent.anneal_coef: 0, 0.3, 0.95, 1
+agent.anneal_coef: 0.9995, 0.9997, 0.9999, 1.0
+agent.n_actor_updates: 1

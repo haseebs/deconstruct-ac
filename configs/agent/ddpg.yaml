@@ -1,0 +1,15 @@
+defaults:
+  - base_common
+  - _self_
+
+name: ddpg
+critic_replay_lr: 0.005
+
+# actor
+actor_lr: 0.05
+actor_lr_multiplier: 1
+n_actor_updates: 1
+
+# policy-specific (for `gaussian_fixed`)
+anneal_coef: 0.9
+

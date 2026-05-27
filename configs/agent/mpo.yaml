@@ -1,0 +1,17 @@
+defaults:
+  - base_common
+  - _self_
+
+name: mpo
+
+# actor
+actor_lr: 0.05
+actor_lr_multiplier: 1
+n_actor_updates: 1
+n_action_proposals: 30
+n_action_proposals_selected: 3
+
+kl_coef: 0.1
+value_baseline_lr: 0.1
+use_true_reward: False
+

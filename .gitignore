@@ -1,0 +1,13 @@
+configs/db/credentials-*.yaml
+__*
+.DS_Store
+.idea/
+.vim-arsync
+__pycache__/
+multirun/
+outputs/
+opc-helper/
+*.log
+.ipynb_checkpoints
+figures/
+outputs

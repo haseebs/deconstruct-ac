@@ -1,0 +1,5 @@
+# @package policy
+actor_policy: softmax
+actor_policy_mean_init: 5
+actor_policy_shape_init: 5
+reparameterisation_trick: 0

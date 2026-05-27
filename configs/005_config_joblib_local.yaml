@@ -1,0 +1,35 @@
+defaults:
+  - db: credentials-rlaidb
+  - schema: default-schema
+  - agent: ppo
+  - policy: gaussian
+  - agent/sweeper_params@hydra.sweeper.params: sac_sweeper_md_sanity
+  - override hydra/launcher: joblib
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+  - _self_
+
+args:
+  run: 10000
+  db_prefix: hshah1
+  db_name: 715_debug1
+  seed: 0
+  steps: 5000
+  n_actions: 3
+  action_min: 0
+  action_max: 20
+  n_threads: 1
+  cuda: False
+  noise: 0.01
+
+# do a sweep with these settings by doing python main.py -m
+hydra:
+ output_subdir: null
+# mode: MULTIRUN
+ launcher:
+   n_jobs: 22
+ sweeper:
+   params:
+     args.seed: range(0,10)
+#     agent/actor: heavytailed_gaussian, q_gaussian, gaussian, beta, student
+#     agent/actor: glob(*) # sweep over all policies

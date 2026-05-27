@@ -1,0 +1,27 @@
+defaults:
+  - db: credentials-local
+  - schema: default-schema
+  - agent: greedyac
+  - policy: gaussian
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+  - _self_
+
+# NOTE: "args.run" is a mandatory <int> argument. This is the primary key used as an
+# individual experiment's identifier in the database.
+#
+# "???" means that it has to be provided as a command line argument
+args:
+  run: ???
+  db_prefix: hshah1
+  db_name: new_experiment1
+  seed: 0
+  steps: 10000
+  n_actions: 3
+  action_min: 0
+  action_max: 20
+  n_threads: 1
+  cuda: True
+
+hydra:
+  output_subdir: null

@@ -1,0 +1,16 @@
+seaborn
+matplotlib>=3.7
+scikit-learn
+pandas
+mysql-connector-python
+hydra-core
+IPython
+hydra-joblib-launcher
+hydra-submitit-launcher
+hydra_colorlog
+torch
+numpy
+black
+tqdm
+pytest
+pytest-cov

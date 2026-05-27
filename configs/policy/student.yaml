@@ -1,0 +1,7 @@
+# @package policy
+actor_policy: student
+actor_policy_mean_init: 0
+actor_policy_shape_init: 1
+actor_policy_df_init: 2
+actor_policy_fixed_df: False
+reparameterisation_trick: 1

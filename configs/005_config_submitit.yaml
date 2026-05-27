@@ -1,0 +1,49 @@
+defaults:
+  - db: credentials-rlaidb
+  - schema: default-schema
+  - agent: sac
+  - policy: gaussian
+  - agent/sweeper_params@hydra.sweeper.params: sac_sweeper_entropy
+  - override hydra/launcher: submitit_slurm
+  - override hydra/job_logging: default
+  - _self_
+
+args:
+  run: 0
+  db_prefix: hshah1
+  db_name: 901_sac_sweeper_sum_log_prob_gaussian_beta_retry
+  seed: 0
+  steps: 5000
+  n_actions: 3
+  action_min: 0
+  action_max: 20
+  n_threads: 1
+  cuda: False
+  noise: 0.01
+
+
+# do a sweep with these settings by doing python main.py -m
+hydra:
+ output_subdir: null
+ sweep:
+   dir: ${hydra.runtime.cwd}/hydra_sweeps
+   subdir: ${hydra.job.name}/${hydra.job.num}
+# mode: MULTIRUN
+ launcher:
+   submitit_folder: ${hydra.sweep.dir}/.submitit/%j
+   name: ${hydra.job.name}
+   timeout_min: 119
+   account: ???
+   nodes: 1
+   tasks_per_node: 1
+   cpus_per_task: 1
+   gpus_per_node: null
+   mem_per_cpu: 3G
+   array_parallelism: 1000
+   setup:
+     - module load python/3.10
+     - module load mariadb
+     - source /path/to/your/venv/bin/activate
+ sweeper:
+   params:
+     args.seed: range(0,10)
