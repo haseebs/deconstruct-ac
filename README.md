@@ -1,9 +1,9 @@
 # Deconstructing Actor-Critic
 Research code for the paper:
 
-> **Deconstructing actor-critic: a large-scale empirical study of design components for practitioners**\
+> **Deconstructing Actor-Critic: A Large-Scale Empirical Study of Design Components for Practitioners**\
 > Haseeb Shah, Lingwei Zhu, Adam White, Martha White.\
-> *Under review at [PNAS](https://www.pnas.org).*
+> *Under review at [Science Advances](https://www.science.org/journal/sciadv).*
 
 This study analyzes 33,000+ runs on a control task derived from a real drinking-water treatment plant, varying the lower-level design components of actor-critic algorithms such as the policy objective, policy parameterization, gradient estimator, and actor/critic update schedule to understand how each affects performance, run-to-run variability and hyperparameter sensitivity. The source data from the Drayton Valley water treatment plant in [`data/`](data/).
 
