@@ -1,5 +1,5 @@
 # Deconstructing Actor-Critic
-Research code for the paper:
+Research code, the water-treatment environment and data for the paper:
 
 > **[Deconstructing Actor-Critic: A Large-Scale Empirical Study of Design Components for Practitioners](https://arxiv.org/pdf/2607.13274)**\
 > Haseeb Shah, Lingwei Zhu, Adam White, Martha White.\
