@@ -1,9 +1,9 @@
 # Deconstructing Actor-Critic
 Research code for the paper:
 
-> **Deconstructing Actor-Critic: A Large-Scale Empirical Study of Design Components for Practitioners**\
+> **[Deconstructing Actor-Critic: A Large-Scale Empirical Study of Design Components for Practitioners](https://arxiv.org/pdf/2607.13274)**\
 > Haseeb Shah, Lingwei Zhu, Adam White, Martha White.\
-> *Under review at [Science Advances](https://www.science.org/journal/sciadv).*
+> *Under review.*
 
 This study analyzes 33,000+ runs on a control task derived from a real drinking-water treatment plant, varying the lower-level design components of actor-critic algorithms such as the policy objective, policy parameterization, gradient estimator, and actor/critic update schedule to understand how each affects performance, run-to-run variability and hyperparameter sensitivity. The source data from the Drayton Valley water treatment plant in [`data/`](data/).
 
@@ -102,4 +102,20 @@ Before launching a sweep on your own cluster, edit the `hydra.launcher` section 
 │   └── schema/                   # Database logging schema
 ├── notebooks/                    # Example plotting notebook
 └── requirements.txt
+```
+
+## Citation
+
+If you found our work helpful in your research and need a reference, then you may use the following bibtex:
+
+```
+@misc{deconstructingac2026,
+      title={Deconstructing Actor-Critic: A Large-scale Empirical Study of Design Components for Practitioners}, 
+      author={Haseeb Shah and Lingwei Zhu and Adam White and Martha White},
+      year={2026},
+      eprint={2607.13274},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2607.13274}, 
+}
 ```
